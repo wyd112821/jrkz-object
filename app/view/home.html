@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>今日口子</title>
+		<meta name="keywords" content="今日口子" />
+        <meta name="description" content="今日口子" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="address=no" />
+        <!--for baidu 识别移动端页面并禁止百度转码-->
+        <meta name="applicable-device"content="mobile"> 
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../web/resource/css/mui.min.css" rel="stylesheet" />
+		<link href="../../web/resource/css/iconfont.css" rel="stylesheet" />
+		<link href="../../web/resource/css/custom.css" rel="stylesheet" />
+		<link href="../../web/resource/css/home.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<header class="mui-bar top-bar">
+				<h1 class="mui-title">今日口子</h1>
+			</header>
+			
+			<footer class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item" href="home.html"><i class="icon iconfont icon-shouye"></i>首页</a>
+				<a class="mui-tab-item" href="finance-market.html"><i class="icon iconfont icon-chaoshi"></i>金融超市</a>
+				<a class="mui-tab-item" href="login.html"><i class="icon iconfont icon-yonghu"></i>我的</a>
+			</footer>
+			
+			<div id="pullrefresh" class="panel-box panel1-box mui-scroll-wrapper">
+				<div class="mui-scroll">
+					
+					<div class="mui-row tab-items-box">
+						<div class="mui-col-sm-6 mui-col-xs-6">
+							<a class="tab-item" href="transact-card.html"><i class="icon iconfont icon-xinyongka"></i>办信用卡</a>
+						</div>
+						<div class="mui-col-sm-6 mui-col-xs-6">
+							<a class="tab-item" href="course.html"><i class="icon iconfont icon-xinshoujiaocheng"></i>新手教程</a>
+						</div>
+					</div>
+					
+					<div id="slider" class="mui-slider" >
+						<div class="mui-slider-group mui-slider-loop">
+							<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#"><img src="../../web/resource/images/pic2.png"></a>
+							</div>
+							<!-- 第一张 -->
+							<div class="mui-slider-item">
+								<a href="#"><img src="../../web/resource/images/pic1.png"></a>
+							</div>
+							<!-- 第二张 -->
+							<div class="mui-slider-item">
+								<a href="#"><img src="../../web/resource/images/pic2.png"></a>
+							</div>
+							<!-- 第三张 -->
+							<div class="mui-slider-item">
+								<a href="#"><img src="../../web/resource/images/pic1.png"></a>
+							</div>
+							<!-- 第四张 -->
+							<div class="mui-slider-item">
+								<a href="#"><img src="../../web/resource/images/pic2.png"></a>
+							</div>
+							<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#"><img src="../../web/resource/images/pic1.png"></a>
+							</div>
+						</div>
+						<div class="mui-slider-indicator">
+							<div class="mui-indicator mui-active"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+						</div>
+					</div>
+					
+					<!--数据列表-->
+					<ul class="twList">
+						
+					</ul>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+		
+
+		<script src="../../web/resource/js/mui.min.js"></script>
+		<script src="../../web/resource/js/common.js"></script>
+		<script>
+			////初始化
+			mui.init({
+				swipeBack: false,
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+						callback: pulldownRefresh
+					},
+					up: {
+						contentrefresh: '正在加载...',
+						callback: pullupRefresh
+					}
+				}
+			});
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				setTimeout(function() {
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+				}, 1000);
+			}
+			var count = 0;
+			/**
+			 * 上拉加载具体业务实现
+			 */
+			function pullupRefresh() {
+				setTimeout(function() {
+					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+					var table = document.body.querySelector('.twList');
+					var cells = document.body.querySelectorAll('.twList-li');
+					for (var i = cells.length, len = i + 6; i < len; i++) {
+						var li = document.createElement('li');
+						li.className = 'twList-li';
+						li.innerHTML = '<a href="detail.html"><div class="pic"><img src="../../web/resource/images/pic3.jpg"></div><div class="con"><div class="title">龙超理金：特金会又现转机 金价多头再度承压</div><div class="others"><span class="date">2018-04-25</span><span class="num">202人阅读</span></div></div></a>';
+						table.appendChild(li);
+					}
+				}, 1500);
+			}
+			if (mui.os.plus) {
+				mui.plusReady(function() {
+					setTimeout(function() {
+						mui('#pullrefresh').pullRefresh().pullupLoading();
+					}, 1000);
+	
+				});
+			} else {
+				mui.ready(function() {
+					mui('#pullrefresh').pullRefresh().pullupLoading();
+				});
+			}
+	
+		</script>
+	</body>
+
+</html>

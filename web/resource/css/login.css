@@ -1,0 +1,98 @@
+.login-banner{
+	background: #387ef5;
+}
+.login-banner p{
+	padding: 1.4rem;
+	color: #fff;
+	text-align: center;
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+
+.plat-form{
+	padding: 0.5rem 0.96rem;
+}
+
+.plat-row{
+	position: relative;
+}
+.plat-row input[type=text]{
+	height: 0.9rem;
+	font-size: 0.28rem;
+	padding: 0 0.45rem 0 1.15rem;
+	color: #666;
+	font-family: "微软雅黑";
+}
+.plat-row input::-webkit-input-placeholder{
+    color:#999;
+}
+.plat-row label{
+	position: absolute;
+	left: 0.24rem;
+	top: 50%;
+	margin-top: -18px;
+	color: #666;
+	font-size: 0.3rem;
+}
+.plat-margin-top input[type=button]{
+	width: 100%;
+	height: 0.9rem;
+    background: #3A94DB;
+    color: #fff;
+    border: none;
+    font-size: 0.32rem;
+    font-family: "微软雅黑";
+}
+
+
+
+
+.set-user{
+	padding: 0.6rem 0.5rem;
+	background: url(../images/bound_bg.png) no-repeat;
+	background-size: cover;
+	overflow: hidden;
+}
+.set-user .pic{
+	position: relative;
+	width: 2.2rem;
+	height: 2.2rem;
+	border-radius: 50%;
+	border: 0.06rem solid #fff;
+	overflow: hidden;
+	z-index: 2;
+	float: left;
+}
+.set-user .pic img{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -1.2rem;
+	margin-top: -1.2rem;
+	width: 2.4rem;
+	height: auto;
+}
+.user{
+	display: block;
+	float: left;
+	padding: 0.4rem 0 0 0.4rem;
+	color: #fff;
+	font-size: 0.3rem;
+}
+.user h3{ 
+	line-height: 0.6rem;
+}
+.user a{
+	color: #fff;
+}
+
+.person-lis{
+	padding: 0.2rem 0.3rem;
+}
+.person-lis li{
+	padding: 0.26rem;
+	border-bottom: 1px solid #ddd;
+}
+.person-lis li a{
+	font-size: 0.3rem;
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>今日口子</title>
+		<meta name="keywords" content="今日口子" />
+        <meta name="description" content="今日口子" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="address=no" />
+        <!--for baidu 识别移动端页面并禁止百度转码-->
+        <meta name="applicable-device"content="mobile"> 
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../web/resource/css/mui.min.css" rel="stylesheet" />
+		<link href="../../web/resource/css/iconfont.css" rel="stylesheet" />
+		<link href="../../web/resource/css/custom.css" rel="stylesheet" />
+		<link href="../../web/resource/css/login.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<header class="mui-bar top-bar">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">我的</h1>
+			</header>
+			
+			<footer class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item" href="home.html"><i class="icon iconfont icon-shouye"></i>首页</a>
+				<a class="mui-tab-item" href="finance-market.html"><i class="icon iconfont icon-chaoshi"></i>金融超市</a>
+				<a class="mui-tab-item" href="login.html"><i class="icon iconfont icon-yonghu"></i>我的</a>
+			</footer>
+			
+			<div id="pullrefresh" class="mui-content mui-scroll-wrapper panel1-box">
+				<div class="mui-scroll">
+
+					<div class="login-banner">
+						<p>江湖游卡</p>
+					</div>
+					
+					<form action="">
+						<div class="plat-form">
+							<div class="plat-row">
+								<input class="name" type="text" placeholder="用户名">
+								<label for="name">账号：</label>
+							</div>
+							<div class="plat-row">
+								<input class="password" type="text" placeholder="密码">
+								<label for="password">密码：</label>
+							</div>
+							<div class="plat-row plat-margin-top">
+								<input class="login-btn" type="button" value="登录" />
+							</div>
+						</div>
+					</form>
+				
+				</div>
+			</div>
+
+		</div>
+		
+
+		<script src="../../web/resource/js/mui.min.js"></script>
+		<script src="../../web/resource/js/common.js"></script>
+		<script>
+			////初始化
+			mui.init();
+			
+	
+		</script>
+		
+	</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>今日口子</title>
+		<meta name="keywords" content="今日口子" />
+        <meta name="description" content="今日口子" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="address=no" />
+        <!--for baidu 识别移动端页面并禁止百度转码-->
+        <meta name="applicable-device"content="mobile"> 
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../web/resource/css/mui.min.css" rel="stylesheet" />
+		<link href="../../web/resource/css/iconfont.css" rel="stylesheet" />
+		<link href="../../web/resource/css/custom.css" rel="stylesheet" />
+		<link href="../../web/resource/css/login.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<header class="mui-bar top-bar">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">个人中心</h1>
+			</header>
+			
+			<footer class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item" href="home.html"><i class="icon iconfont icon-shouye"></i>首页</a>
+				<a class="mui-tab-item" href="finance-market.html"><i class="icon iconfont icon-chaoshi"></i>金融超市</a>
+				<a class="mui-tab-item" href="login.html"><i class="icon iconfont icon-yonghu"></i>我的</a>
+			</footer>
+			
+			<div id="pullrefresh" class="mui-content mui-scroll-wrapper panel1-box">
+				<div class="mui-scroll">
+					
+					<div class="set-user">
+						<div class="pic"><img src="../../web/resource/images/head_img.jpg"/></div>
+						<div class="user">
+							<h3>- - - -</h3>
+							<a href="">请先登录</a>
+						</div>
+					</div>
+					
+					<div class="person-lis">
+						<ul>
+							<li><a href="">个人信息</a></li>
+							<li><a href="">帮助</a></li>
+							<li><a href="">在线客服</a></li>
+						</ul>
+					</div>
+					
+					
+				
+				</div>
+			</div>
+
+		</div>
+		
+
+		<script src="../../web/resource/js/mui.min.js"></script>
+		<script src="../../web/resource/js/common.js"></script>
+		<script>
+			////初始化
+			mui.init();
+			
+			//更换头像
+			function previewImg(file){
+			    //判断是否支持FileReader
+			    if (window.FileReader) {
+			        var reader = new FileReader();
+			    } else {
+			        alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+			    }
+			    var preDiv = document.getElementById("wholeImg");
+			    //获取图片
+			    if (file.files && file.files[0]){
+			        var reader = new FileReader(); 
+			        reader.onload = function(e){  
+			            var img = document.getElementById("img1");
+			            img.setAttribute("src",e.target.result);
+			        }
+			        reader.readAsDataURL(file.files[0]);
+			    }
+			}
+	
+		</script>
+		
+	</body>
+
+</html>

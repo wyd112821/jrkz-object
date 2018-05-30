@@ -1,0 +1,90 @@
+/* 信用卡&&新手教程 */
+.tab-items-box{
+	height: 0.9rem;
+	line-height: 0.9rem;
+	background: #fff;
+	overflow: hidden;
+}
+.tab-items-box .mui-col-sm-6{
+	text-align: center;
+}
+.tab-items-box .tab-item{
+	font-size: 0.3rem
+}
+.tab-items-box .tab-item .iconfont{
+	padding-right: 0.2rem;
+	font-size: 0.36rem
+}
+.tab-items-box .tab-item .icon-xinyongka{
+	font-size: 0.32rem
+}
+
+
+/* 图文列表 */
+.twList{
+	margin-top: 0.2rem;
+	padding: 0 0.2rem;
+}
+.twList li {
+    padding: 0.24rem 0;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+}
+.twList li > a {
+    display: block;
+    overflow: hidden;
+}
+.twList .pic {
+    float: right;
+    margin-left: 4%;
+    width: 28%;
+}
+.twList .pic img {
+    height: auto;
+    width: 100%;
+}
+.twList .con {
+    overflow: hidden;
+    zoom: 1;
+}
+.twList .title {
+    font-size: 0.26rem;
+    line-height: 0.4rem;
+    margin-bottom: 0.1rem;
+    overflow: hidden;
+}
+.twList .intro {
+    line-height: 24px;
+    color: #777;
+    max-height: 48px;
+    overflow: hidden;
+    font-size: 13px;
+}
+.twList .title a:hover {
+    text-decoration: none;
+}
+.twList .intro .more {
+    display: none;
+}
+.twList .others {
+    font-size: 0.24rem;
+    color: #bbb;
+}
+.twList .others span {
+    margin-right: 15px;
+}
+.twList .node {
+    color: #aaa;
+    margin-right: 15px;
+}
+.twList .last {
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+
+
+
+
+
+
+
