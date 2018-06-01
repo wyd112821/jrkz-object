@@ -103,6 +103,10 @@ html{ font-size: 312.5%; }
 }
 
 
+.mui-bar .mui-icon{
+	font-size: 0.6rem;
+	padding-top: 0.26rem;
+}
 
 
 

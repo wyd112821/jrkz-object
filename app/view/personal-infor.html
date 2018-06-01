@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>今日口子</title>
+		<meta name="keywords" content="今日口子" />
+        <meta name="description" content="今日口子" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="address=no" />
+        <!--for baidu 识别移动端页面并禁止百度转码-->
+        <meta name="applicable-device"content="mobile"> 
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../web/resource/css/mui.min.css" rel="stylesheet" />
+		<link href="../../web/resource/css/iconfont.css" rel="stylesheet" />
+		<link href="../../web/resource/css/mui.picker.min.css" rel="stylesheet" />
+		<link href="../../web/resource/css/mui.poppicker.css" rel="stylesheet" />
+		<link href="../../web/resource/css/custom.css" rel="stylesheet" />
+		<link href="../../web/resource/css/login.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<header class="mui-bar top-bar">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">个人信息</h1>
+				<button type="button" class="mui-btn save-btn" onclick="return false;">保存</button>
+			</header>
+			
+			<footer class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item" href="index.html"><i class="icon iconfont icon-shouye"></i>首页</a>
+				<a class="mui-tab-item" href="finance-market.html"><i class="icon iconfont icon-chaoshi"></i>金融超市</a>
+				<a class="mui-tab-item" href="login.html"><i class="icon iconfont icon-yonghu"></i>我的</a>
+			</footer>
+			
+			<div id="pullrefresh" class="mui-content mui-scroll-wrapper panel1-box">
+				<div class="mui-scroll">
+					
+					<form action="">
+						<div class="setting-box">
+							<div class="mui-input-row">
+								<div class="set-header">
+									<div class="pic" id="wholeImg"><img id="img1" src="../../web/resource/images/head_img.jpg"/></div>
+									<input class="upload" type="file" name="whole" id="whole" capture="camera" onchange="previewImg(this)" />
+									<span>修改头像</span>
+								</div>
+							</div>
+							<div class="mui-input-row">
+								<label>昵称</label>
+								<input type="text" value="182**2015wyd">
+							</div>
+							<div class="mui-input-row">
+								<label>性别</label>
+								<div id='userResult' class="ui-alert"></div>
+								<button id='showUserPicker' class="btnPicker"></button>
+							</div>
+							
+							<div class="mui-input-row">
+								<label>生日</label>
+								<div id='birthday' class="ui-alert"></div>
+								<button id='birthdayPicker' data-options='{"type":"date"}' class="btnPicker"></button>
+							</div>
+							
+							<div class="mui-input-row">
+								<label class="signature">个性签名</label>
+								<textarea id="textarea" placeholder="用一句话介绍自己，限制30字以内哦~"></textarea>
+							</div>
+						</div>
+					</form>
+
+				</div>
+			</div>
+
+		</div>
+		
+		<script src="../../web/resource/js/jquery.min.js"></script>
+		<script src="../../web/resource/js/mui.min.js"></script>
+		<script src="../../web/resource/js/mui.picker.min.js"></script>
+		<script src="../../web/resource/js/mui.poppicker.js"></script>
+		<script src="../../web/resource/js/common.js"></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					//普通示例
+					var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: '1',
+						text: '男性'
+					}, {
+						value: '2',
+						text: '女性'
+					}]);
+					var showUserPickerButton = doc.getElementById('showUserPicker');
+					var birthdayPickerButton = doc.getElementById('birthdayPicker');
+					var userResult = doc.getElementById('userResult');
+					var birthday = doc.getElementById('birthday');
+					
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							var str = JSON.stringify(items[0].text);
+							var substr = str.slice(1,str.lastIndexOf('\"'))
+							userResult.innerText = substr;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					
+					
+					birthdayPickerButton.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							birthday.innerText = rs.text;
+							picker.dispose();
+						});
+					}, false);
+
+
+				});
+			})(mui, document);
+			
+			
+			function previewImg(file){
+			    //判断是否支持FileReader
+			    if (window.FileReader) {
+			        var reader = new FileReader();
+			    } else {
+			        alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+			    }
+			    var preDiv = document.getElementById("wholeImg");
+			    //获取图片
+			    if (file.files && file.files[0]){
+			        var reader = new FileReader(); 
+			        reader.onload = function(e){  
+			            var img = document.getElementById("img1");
+			            img.setAttribute("src",e.target.result);
+			        }
+			        reader.readAsDataURL(file.files[0]);
+			    }
+			}
+			
+			
+			
+			var autoTextarea = function (elem, extra, maxHeight) {
+			        extra = extra || 0;
+			        var isFirefox = !!document.getBoxObjectFor || 'mozInnerScreenX' in window,
+			        isOpera = !!window.opera && !!window.opera.toString().indexOf('Opera'),
+			                addEvent = function (type, callback) {
+			                        elem.addEventListener ?
+			                                elem.addEventListener(type, callback, false) :
+			                                elem.attachEvent('on' + type, callback);
+			                },
+			                getStyle = elem.currentStyle ? function (name) {
+			                        var val = elem.currentStyle[name];
+			                        
+			                        if (name === 'height' && val.search(/px/i) !== 1) {
+			                                var rect = elem.getBoundingClientRect();
+			                                return rect.bottom - rect.top -
+			                                        parseFloat(getStyle('paddingTop')) -
+			                                        parseFloat(getStyle('paddingBottom')) + 'px';        
+			                        };
+			                        
+			                        return val;
+			                } : function (name) {
+			                                return getComputedStyle(elem, null)[name];
+			                },
+			                minHeight = parseFloat(getStyle('height'));
+			        
+			        
+			        elem.style.resize = 'none';
+			        
+			        var change = function () {
+			                var scrollTop, height,
+			                        padding = 0,
+			                        style = elem.style;
+			                
+			                if (elem._length === elem.value.length) return;
+			                elem._length = elem.value.length;
+			                
+			                if (!isFirefox && !isOpera) {
+			                        padding = parseInt(getStyle('paddingTop')) + parseInt(getStyle('paddingBottom'));
+			                };
+			                scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+			                
+			                elem.style.height = minHeight + 'px';
+			                if (elem.scrollHeight > minHeight) {
+			                        if (maxHeight && elem.scrollHeight > maxHeight) {
+			                                height = maxHeight - padding;
+			                                style.overflowY = 'auto';
+			                        } else {
+			                                height = elem.scrollHeight - padding;
+			                                style.overflowY = 'hidden';
+			                        };
+			                        style.height = height + extra + 'px';
+			                        scrollTop += parseInt(style.height) - elem.currHeight;
+			                        document.body.scrollTop = scrollTop;
+			                        document.documentElement.scrollTop = scrollTop;
+			                        elem.currHeight = parseInt(style.height);
+			                };
+			        };
+			        
+			        addEvent('propertychange', change);
+			        addEvent('input', change);
+			        addEvent('focus', change);
+			        change();
+			};
+			
+			
+			var text = document.getElementById("textarea");
+			autoTextarea(text);// 调用
+			
+	
+		</script>
+		
+	</body>
+
+</html>

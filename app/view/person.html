@@ -44,7 +44,7 @@
 					
 					<div class="person-lis">
 						<ul>
-							<li><a href="">个人信息</a></li>
+							<li><a href="personal-infor.html">个人信息</a></li>
 							<li><a href="">帮助</a></li>
 							<li><a href="">在线客服</a></li>
 						</ul>
@@ -63,26 +63,6 @@
 		<script>
 			////初始化
 			mui.init();
-			
-			//更换头像
-			function previewImg(file){
-			    //判断是否支持FileReader
-			    if (window.FileReader) {
-			        var reader = new FileReader();
-			    } else {
-			        alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
-			    }
-			    var preDiv = document.getElementById("wholeImg");
-			    //获取图片
-			    if (file.files && file.files[0]){
-			        var reader = new FileReader(); 
-			        reader.onload = function(e){  
-			            var img = document.getElementById("img1");
-			            img.setAttribute("src",e.target.result);
-			        }
-			        reader.readAsDataURL(file.files[0]);
-			    }
-			}
 	
 		</script>
 		
