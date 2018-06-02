@@ -349,3 +349,17 @@
 	font-size: 0.23rem;
     color: #999;
 }
+
+.client-title{
+	height: 1.6rem;line-height: 1.6rem;
+    background: url(../images/bound_bg.png) no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-size: 0.32rem;
+    color: #fff;
+}
+.client-title strong{
+	font-size: 0.4rem;
+	font-weight: normal;
+	padding: 0 0.1rem;
+}
