@@ -97,6 +97,7 @@ html{ font-size: 312.5%; }
 
 .panel1-box{
 	padding: 1.08rem 0 1.55rem !important;
+	top: 1px;
 }
 .panel1-box .mui-pull-top-pocket{
 	top: 1.08rem;

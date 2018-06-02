@@ -221,3 +221,131 @@
     padding: 0.1rem 0.2rem 0.12rem;
     font-size: 0.28rem;
 }
+
+.mui-table-view-cell:after{
+	display: none;
+}
+
+.salary-box {
+	padding-top: 0.2rem;
+	margin-top: 0.1rem;
+}
+.salary-box .mui-col-sm-4{
+	text-align: center;
+	font-size: 0.28rem;
+}
+.salary-box .mui-col-sm-4 span.line{
+	display: block;
+    width: 1.4rem;
+    height: 1px;
+    background: #eee;
+    margin: 0.16rem auto;
+}
+.salary-box .mui-col-sm-4 i{
+	color: #3e9bfb;
+}
+.salary-box .mui-col-sm-4 i.total{
+	color: #feb348;
+}
+
+.salary-box1{
+	position: relative;
+    padding: 0.3rem 0;
+    background: url(../images/bound_bg.png) no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    color: #fff;
+}
+.salary-box1 p{
+	height: 0.8rem;
+	line-height: 0.8rem;
+	color: #fff;
+	text-align: right;
+	padding-right: 1rem;
+	font-size: 0.3rem;
+}
+.salary-box1 strong{
+	display: block;
+	width: 100%;
+	height: 0.7rem;
+	line-height: 0.6rem;
+	text-align: right;
+	font-size: 0.4rem;
+	font-weight: normal;
+}
+.salary-box1 .line{
+	display: block;
+	border-bottom: 1px dashed #fff;
+	margin: 0.3rem 0;
+}
+.withdraw-btn{
+	display: block;
+	width: 2rem;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	background: #fff;
+	color: #186ed1;
+	text-align: center;
+	border-radius: 50px;
+	margin: 1.4rem 0 0 0.6rem;
+	font-size: 0.32rem;
+}
+
+.mui-segmented-control .mui-control-item{
+	line-height: 0.8rem;
+	font-size: 0.3rem;
+}
+
+.mui-table-view{
+	padding: 0.2rem 0.3rem;
+}
+.mui-table-view-cell{
+	padding: 0.14rem 0;
+}
+.mui-table-view-cell span{
+	font-size: 0.28rem;
+}
+.mui-table-view-cell span.fl{
+	float: left;
+}
+.mui-table-view-cell span.fr{
+	float: right;
+	color: #999;
+}
+
+.recommend-title {
+    padding: 0.2rem 0.2rem 0.16rem;
+    border-bottom: 1px solid #ddd;
+    line-height: 0.58rem;
+    color: #007AFF;
+}
+.recommend-title img {
+    width: 0.5rem;
+    margin-right: 0.1rem;
+    float: left;
+}
+
+.recommend-box {
+    padding: 0.3rem 0.3rem;
+}
+.recommend-box a{
+	display: flex;
+}
+.recommend-box .pic img{
+	width: 1.4rem;
+    height: 1.4rem;
+    margin-right: 0.15rem;
+    margin-bottom: 0.3rem;
+    margin-left: 0.2rem;
+}
+.recommend-box .text h3{
+	font-size: 0.28rem;
+	font-weight: normal;
+	height: 0.3rem;
+	line-height: 0.3rem;
+	margin-top: 0.34rem;
+}
+.recommend-box .text span{
+	font-size: 0.23rem;
+    color: #999;
+}
