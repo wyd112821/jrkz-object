@@ -363,3 +363,34 @@
 	font-weight: normal;
 	padding: 0 0.1rem;
 }
+
+
+.column-list{
+	padding: 0.3rem 0;
+}
+.column-list .mui-tab-item {
+    display: table-cell;
+    overflow: hidden;
+    width: 1%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #929292;
+}
+.column-list .mui-tab-item i {
+    font-size: 0.5rem;
+    color: #8b8c90;
+    display: block;
+    margin: 0.1rem 0 0.14rem;
+}
+.column-list .mui-tab-item i.icon-weibiaoti35{
+	color: #e58601;
+}
+.column-list .mui-tab-item i.icon-iconkh2{
+	color: #e0719d;
+}
+.column-list .mui-tab-item i.icon-icon_gongzi{
+	color: #ebcc3a;
+}
